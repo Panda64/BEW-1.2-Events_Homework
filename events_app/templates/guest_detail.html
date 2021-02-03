@@ -17,9 +17,9 @@
 <h2>Events Attending:</h2>
 
 <ul>
-    {{% for event in events_attending %}}
+    {% for event in guest.events_attending %}
     <li><a href="/event/{{ event.id }}">{{ event.title }}</a></li>
-    {{% endfor %}}
+    {% endfor %}
 </ul>
 
 {% endblock %}

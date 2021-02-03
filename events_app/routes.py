@@ -75,7 +75,7 @@ def create():
                 f'{date} {time}',
                 '%Y-%m-%d %H:%M')
         except ValueError:
-            print('there was an error: incorrect datetime format')
+            return('there was an error: incorrect datetime format')
 
         # TODO: Create a new event with the given title, description, & 
         # datetime, then add and commit to the database
@@ -85,7 +85,7 @@ def create():
         db.session.commit()
 
         flash('Event created.')
-        return redirect(url_for('main.homepage'))
+        return redirect(url_for('main.index'))
     else:
         return render_template('create.html')
 
